@@ -1,0 +1,247 @@
+body{
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.square{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 60px rgba(173, 216, 230, 0.4));
+    z-index: 2;
+}
+.square span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 35%, rgba(99, 162, 255, 0.12) 45%, rgba(135, 206, 250, 0.25) 75%, transparent 85%);
+    box-shadow: 
+        0 0 40px rgba(99, 162, 255, 0.3), 
+        inset 0 0 40px rgba(135, 206, 250, 0.15),
+        0 0 80px rgba(173, 216, 230, 0.2);
+    border-radius: 42% 58% 70% 30% / 45% 50% 60% 55%;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: animate1 8s ease-in-out infinite;
+    transform-origin: center;
+    backdrop-filter: blur(1px);
+}
+.square span:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 85%;
+    height: 85%;
+    margin: 7.5%;
+    background: radial-gradient(circle at center, transparent 30%, rgba(144, 238, 144, 0.08) 40%, rgba(152, 251, 152, 0.18) 70%, transparent 80%);
+    box-shadow: 
+        0 0 35px rgba(144, 238, 144, 0.25), 
+        inset 0 0 35px rgba(152, 251, 152, 0.12),
+        0 0 70px rgba(152, 251, 152, 0.15);
+    border-radius: 65% 35% 40% 60% / 50% 55% 45% 50%;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: animate2 6s ease-in-out infinite;
+    transform-origin: center;
+    backdrop-filter: blur(0.5px);
+}
+.square span:nth-child(3){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+    margin: 15%;
+    background: radial-gradient(circle at center, transparent 25%, rgba(255, 182, 193, 0.06) 35%, rgba(255, 192, 203, 0.15) 65%, transparent 75%);
+    box-shadow: 
+        0 0 30px rgba(255, 182, 193, 0.2), 
+        inset 0 0 30px rgba(255, 192, 203, 0.08),
+        0 0 60px rgba(255, 182, 193, 0.12);
+    border-radius: 50% 50% 65% 35% / 40% 60% 50% 50%;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: animate3 10s ease-in-out infinite;
+    transform-origin: center;
+    backdrop-filter: blur(0.3px);
+}
+@keyframes animate1 {
+    0%, 100%{
+        transform: rotate(0deg) scale(1);
+        border-radius: 42% 58% 70% 30% / 45% 50% 60% 55%;
+    }
+    25%{
+        transform: rotate(90deg) scale(1.02);
+        border-radius: 60% 40% 50% 50% / 55% 45% 65% 35%;
+    }
+    50%{
+        transform: rotate(180deg) scale(0.98);
+        border-radius: 50% 50% 40% 60% / 35% 65% 50% 50%;
+    }
+    75%{
+        transform: rotate(270deg) scale(1.01);
+        border-radius: 40% 60% 55% 45% / 60% 40% 45% 55%;
+    }
+}
+@keyframes animate2 {
+    0%, 100%{
+        transform: rotate(0deg) scale(1);
+        border-radius: 65% 35% 40% 60% / 50% 55% 45% 50%;
+    }
+    33%{
+        transform: rotate(-120deg) scale(1.03);
+        border-radius: 45% 55% 60% 40% / 65% 35% 50% 50%;
+    }
+    66%{
+        transform: rotate(-240deg) scale(0.97);
+        border-radius: 55% 45% 50% 50% / 40% 60% 55% 45%;
+    }
+}
+@keyframes animate3 {
+    0%, 100%{
+        transform: rotate(0deg) scale(1);
+        border-radius: 50% 50% 65% 35% / 40% 60% 50% 50%;
+    }
+    20%{
+        transform: rotate(72deg) scale(1.04);
+        border-radius: 60% 40% 45% 55% / 55% 45% 65% 35%;
+    }
+    40%{
+        transform: rotate(144deg) scale(0.96);
+        border-radius: 40% 60% 55% 45% / 35% 65% 40% 60%;
+    }
+    60%{
+        transform: rotate(216deg) scale(1.02);
+        border-radius: 55% 45% 35% 65% / 60% 40% 55% 45%;
+    }
+    80%{
+        transform: rotate(288deg) scale(0.98);
+        border-radius: 45% 55% 50% 50% / 45% 55% 40% 60%;
+    }
+}
+
+/* Hover effects */
+.square:hover span:nth-child(1) {
+    animation-duration: 4s;
+    box-shadow: 
+        0 0 60px rgba(99, 162, 255, 0.5), 
+        inset 0 0 60px rgba(135, 206, 250, 0.25),
+        0 0 120px rgba(173, 216, 230, 0.3);
+    transform: scale(1.02);
+}
+
+.square:hover span:nth-child(2) {
+    animation-duration: 3s;
+    box-shadow: 
+        0 0 50px rgba(144, 238, 144, 0.4), 
+        inset 0 0 50px rgba(152, 251, 152, 0.2),
+        0 0 100px rgba(152, 251, 152, 0.25);
+    transform: scale(1.01);
+}
+
+.square:hover span:nth-child(3) {
+    animation-duration: 5s;
+    box-shadow: 
+        0 0 40px rgba(255, 182, 193, 0.3), 
+        inset 0 0 40px rgba(255, 192, 203, 0.15),
+        0 0 80px rgba(255, 182, 193, 0.2);
+    transform: scale(1.03);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .square {
+        width: 280px;
+        height: 280px;
+    }
+    #EchoHood {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .square {
+        width: 220px;
+        height: 220px;
+    }
+    #EchoHood {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* AI Agent Container */
+#EchoHood {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(99, 162, 255, 0.05), transparent 60%);
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 0 100px rgba(99, 162, 255, 0.2),
+        inset 0 0 50px rgba(255, 255, 255, 0.02);
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#particles-js canvas {
+    border-radius: 50%;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+#EchoHood::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    right: -30px;
+    bottom: -30px;
+    background: radial-gradient(circle, rgba(99, 162, 255, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+/* Enhanced pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(0.95);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.6;
+    }
+}
