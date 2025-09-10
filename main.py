@@ -4,7 +4,7 @@ import eel
 from engine.features import *
 
 eel.init('www')
-os.system('start msedge.exe --app="http://127.0.0.1:5500/www/index.html"')
+os.system('start msedge.exe --app="http://localhost:8000/index.html"')
 playAssistantSound()
 
-eel.start('index.html', mode=None, host='localhost',block=True)
+eel.start('index.html', mode=None, host='localhost', port=8000, block=True)
